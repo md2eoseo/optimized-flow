@@ -1,0 +1,19 @@
+{
+  "name": "optimized-flow",
+  "version": "0.0.1",
+  "description": "Team Neon: An Optimized Flow Project from KEA MMD 3rd sem. (with DXC Technology)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/md2eoseo/optimized-flow.git"
+  },
+  "author": "neon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/md2eoseo/optimized-flow/issues"
+  },
+  "homepage": "https://github.com/md2eoseo/optimized-flow#readme"
+}
