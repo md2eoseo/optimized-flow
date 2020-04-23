@@ -4,8 +4,6 @@
 @use 'partials/components';
 
 .container {
-  text-align: center;
-
   &::after {
     content: "";
     position: absolute;
@@ -17,5 +15,7 @@
 }
 
 .element {
+  width: 80%;
+  margin: 0 auto;
   padding: 80px 0;
 }
