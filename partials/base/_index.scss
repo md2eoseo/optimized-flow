@@ -1,2 +1,12 @@
 @forward 'vars';
 @forward 'mixins';
+
+@font-face {
+  font-family: BoldFont;
+  src: url("static/font/GT-Walsheim-Pro-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: RegularFont;
+  src: url("static/font/GT-Walsheim-Pro-Regular.woff2") format("woff2");
+}

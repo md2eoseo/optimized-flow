@@ -3,6 +3,10 @@
 @use 'partials/base' as *;
 @use 'partials/components';
 
+img {
+  filter: grayscale(100%);
+}
+
 .container {
   &::after {
     content: "";
@@ -18,4 +22,8 @@
   width: 80%;
   margin: 0 auto;
   padding: 80px 0;
+}
+
+.hidden {
+  display: none;
 }

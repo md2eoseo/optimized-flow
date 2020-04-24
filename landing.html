@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/png" href="static/image/favicon-32x32.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="static/image/favicon-32x32.png"
+    />
     <link rel="stylesheet" href="styles.scss" />
     <meta name="robots" content="noindex" />
     <script src="https://kea-alt-del.dk/dxc/login.js"></script>
@@ -40,59 +44,74 @@
             </div>
           </div>
           <div class="container">
-            <div class="element">
+            <div class="element form">
+              <h1>
+                Keep up to date with technology and innovation, <br />now and in
+                the future!
+              </h1>
+              <img src="./static/img/hr-transformation.jpg" alt="Sign up!" />
               <form>
-                <h1>Sign Up!</h1>
-                <label for="full_name">Full Name</label>
-                <input
-                  type="text"
-                  id="full_name"
-                  name="full_name"
-                  placeholder="Full Name"
-                  required
-                />
-                <label for="work_email">Work Email</label>
-                <input
-                  type="email"
-                  id="work_email"
-                  name="work_email"
-                  placeholder="Work Email"
-                  required
-                />
-                <label for="job_title">Job Title</label>
-                <input
-                  type="text"
-                  id="job_title"
-                  name="job_title"
-                  placeholder="Job Title"
-                  required
-                />
-                <label for="country">Country</label>
-                <select id="country" name="country">
-                  <optgroup label="Europe">
-                    <option>Denmark</option>
-                    <option>Finland</option>
-                  </optgroup>
-                  <optgroup label="Asia">
-                    <option>Korea</option>
-                    <option>Nepal</option>
-                  </optgroup>
-                </select>
-                <label for="company">Company</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Company"
-                />
-                <input type="checkbox" id="agree" name="agree" />
-                <label for="agree">Yes, I agree.</label>
-                <button id="backBtn" class="btn">Back</button>
-                <button id="NextBtn" class="btn">Next</button>
-                <button type="submit" id="submitBtn" class="btn">Submit</button>
+                <div>
+                  <label for="full_name">Full Name</label>
+                  <input
+                    type="text"
+                    id="full_name"
+                    name="full_name"
+                    placeholder="Full Name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="work_email">Work Email</label>
+                  <input
+                    type="email"
+                    id="work_email"
+                    name="work_email"
+                    placeholder="Work Email"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="job_title">Job Title</label>
+                  <input
+                    type="text"
+                    id="job_title"
+                    name="job_title"
+                    placeholder="Job Title"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="country">Country</label>
+                  <select id="country" name="country">
+                    <optgroup label="Europe">
+                      <option>Denmark</option>
+                      <option>Finland</option>
+                    </optgroup>
+                    <optgroup label="Asia">
+                      <option>Korea</option>
+                      <option>Nepal</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div>
+                  <label for="company">Company</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Company"
+                  />
+                </div>
+                <div>
+                  <input type="checkbox" id="agree" name="agree" />
+                  <label for="agree">Yes, I agree.</label>
+                </div>
+                <button type="submit" id="submitBtn">Submit</button>
               </form>
             </div>
           </div>
+          <br /><br /><br />
         </article>
       </div>
     </section>

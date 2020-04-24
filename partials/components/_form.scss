@@ -1,0 +1,19 @@
+@use '../base/vars' as *;
+@use '../base/mixins' as *;
+
+.form {
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 50px;
+
+  h1 {
+    margin-bottom: 40px;
+    font-size: 35px;
+    font-family: BoldFont;
+  }
+
+  img {
+    width: 55%;
+    float: left;
+  }
+}
