@@ -59,6 +59,9 @@
                     placeholder="Full Name*"
                     required
                   />
+                  <p id="full_name_p" class="hidden invalid_p">
+                    invalid full_name!!
+                  </p>
                 </div>
                 <div>
                   <label for="work_email" class="hidden">Work Email</label>
@@ -69,6 +72,9 @@
                     placeholder="Work Email*"
                     required
                   />
+                  <p id="work_email_p" class="hidden invalid_p">
+                    invalid work_email!!
+                  </p>
                 </div>
                 <div>
                   <label for="job_title" class="hidden">Job Title</label>
@@ -78,11 +84,14 @@
                     placeholder="Job Title*"
                     required
                   />
+                  <p id="job_title_p" class="hidden invalid_p">
+                    invalid job_title!!
+                  </p>
                 </div>
                 <div>
                   <label for="country" class="hidden">Country</label>
-                  <select id="country" name="country">
-                    <option value="" selected disabled hidden>Country</option>
+                  <select id="country" name="country" required>
+                    <option value="" selected disabled hidden>Country*</option>
                     <optgroup label="Europe">
                       <option value="Denmark">Denmark</option>
                       <option value="Finland">Finland</option>
@@ -92,14 +101,18 @@
                       <option value="Nepal">Nepal</option>
                     </optgroup>
                   </select>
+                  <p id="country_p" class="hidden invalid_p">
+                    invalid country!!
+                  </p>
                 </div>
                 <div>
                   <label for="company" class="hidden">Company</label>
                   <input id="company" name="company" placeholder="Company" />
                 </div>
                 <div>
-                  <input type="checkbox" id="agree" name="agree" />
+                  <input type="checkbox" id="agree" name="agree" required />
                   <label for="agree">Yes, I agree.</label>
+                  <p id="agree_p" class="hidden invalid_p">invalid agree!!</p>
                 </div>
                 <button type="submit" id="submitBtn">Submit</button>
               </form>
@@ -109,5 +122,6 @@
         </article>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>

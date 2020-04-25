@@ -1,0 +1,87 @@
+"use strict";
+const DB_URL = "https://todoweb-a2c8.restdb.io/rest/client";
+const API_KEY = "5e9e0988436377171a0c266d";
+
+window.addEventListener("load", () => {
+  const form = document.querySelector(".form form");
+  const elements = form.elements;
+  elements.full_name.focus();
+  form.setAttribute("novalidate", true);
+  form.addEventListener("submit", submitInfo);
+});
+
+function submitInfo(e) {
+  e.preventDefault();
+  checkValidation(e.target);
+}
+
+function checkValidation(form) {
+  const elements = form.elements;
+  const full_name = elements.full_name;
+  const work_email = elements.work_email;
+  const job_title = elements.job_title;
+  const country = elements.country;
+  const company = elements.company;
+  const agree = elements.agree;
+  const full_name_p = form.querySelector("#full_name_p");
+  const work_email_p = form.querySelector("#work_email_p");
+  const job_title_p = form.querySelector("#job_title_p");
+  const country_p = form.querySelector("#country_p");
+  const agree_p = form.querySelector("#agree_p");
+  full_name.value = full_name.value.trim();
+  work_email.value = work_email.value.trim();
+  job_title.value = job_title.value.trim();
+  company.value = company.value.trim();
+
+  // initialize previous invalid inputs
+  document.querySelectorAll("input, select").forEach((ele) => {
+    ele.classList.remove("invalid");
+  });
+
+  if (form.checkValidity()) {
+    post({
+      full_name: full_name.value.trim(),
+      work_email: work_email.value.trim(),
+      job_title: job_title.value.trim(),
+      country: country.value,
+      company: company.value.trim(),
+      agree: work_email.value,
+    });
+    console.log("submitted " + work_email.value.trim());
+    return true;
+  } else {
+    // check every inputs' validity
+    if (!full_name.checkValidity()) {
+      full_name.classList.add("invalid");
+      full_name_p.classList.remove("hidden");
+    } else {
+      full_name_p.classList.add("hidden");
+    }
+    if (!work_email.checkValidity()) {
+      work_email.classList.add("invalid");
+      work_email_p.classList.remove("hidden");
+    } else {
+      work_email_p.classList.add("hidden");
+    }
+    if (!job_title.checkValidity()) {
+      job_title.classList.add("invalid");
+      job_title_p.classList.remove("hidden");
+    } else {
+      job_title_p.classList.add("hidden");
+    }
+    if (!country.checkValidity()) {
+      country.classList.add("invalid");
+      country_p.classList.remove("hidden");
+    } else {
+      country_p.classList.add("hidden");
+    }
+    if (!agree.checkValidity()) {
+      agree.classList.add("invalid");
+      agree_p.classList.remove("hidden");
+    } else {
+      agree_p.classList.add("hidden");
+    }
+
+    console.log("validation error!!");
+  }
+}

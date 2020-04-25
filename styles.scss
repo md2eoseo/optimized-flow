@@ -24,6 +24,14 @@ img {
   padding: 80px 0;
 }
 
+.invalid {
+  border: 1px solid red;
+}
+
+.invalid_p {
+  color: red;
+}
+
 .hidden {
   display: none;
 }
