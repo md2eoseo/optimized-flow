@@ -40,12 +40,11 @@ function checkValidation(form) {
 
   if (form.checkValidity()) {
     post({
-      full_name: full_name.value.trim(),
-      work_email: work_email.value.trim(),
-      job_title: job_title.value.trim(),
+      full_name: full_name.value,
+      work_email: work_email.value,
+      job_title: job_title.value,
       country: country.value,
-      company: company.value.trim(),
-      agree: work_email.value,
+      company: company.value,
     });
     console.log("submitted " + work_email.value.trim());
     return true;
@@ -84,4 +83,21 @@ function checkValidation(form) {
 
     console.log("validation error!!");
   }
+}
+
+function post(data) {
+  const postData = JSON.stringify(data);
+  fetch(DB_URL, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": API_KEY,
+      "cache-control": "no-cache",
+    },
+    body: postData,
+  })
+    .then((res) => res.json())
+    .then(() => {
+      console.log(`inserted ${postData} into client list!`);
+    });
 }
