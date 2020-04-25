@@ -38,8 +38,22 @@
   }
 
   #submitBtn {
-    width: 100px;
-    height: 40px;
     margin-top: 1vw;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 15px 30px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: #1ab188;
+    color: #fff;
+    transition: 0.5s ease;
+    -webkit-appearance: none;
+    &:hover,
+    &:focus {
+      background: darken(#1ab188, 5%);
+    }
   }
 }
