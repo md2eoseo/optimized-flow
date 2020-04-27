@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
       ele.addEventListener("input", checkValidationBeforeSubmit)
     );
   form.addEventListener("submit", submitInfo);
+  isClientSubmitted();
 });
 
 function checkValidationBeforeSubmit(e) {
@@ -115,5 +116,14 @@ function post(data) {
     .then((res) => res.json())
     .then(() => {
       console.log(`inserted ${postData} into client list!`);
+      localStorage.setItem("isClientSubmitted", [JSON.stringify(data)]);
+    })
+    .catch((error) => {
+      console.error(`POST ERROR: ${error}`);
     });
+}
+
+function isClientSubmitted() {
+  const client = JSON.parse(localStorage.getItem("isClientSubmitted"));
+  console.log(client.work_email);
 }
