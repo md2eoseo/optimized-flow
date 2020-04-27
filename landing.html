@@ -51,47 +51,46 @@
               </h1>
               <img src="./static/img/hr-transformation.jpg" alt="Sign up!" />
               <form>
-                <div>
-                  <label for="full_name" class="hidden">Full Name</label>
+                <div class="form-field">
                   <input
                     id="full_name"
                     name="full_name"
-                    placeholder="Full Name*"
+                    placeholder="&nbsp;"
                     required
                   />
+                  <label for="full_name" class="required">Full Name</label>
                   <p id="full_name_p" class="hidden invalid_p">
-                    invalid full_name!!
+                    Full Name is empty.
                   </p>
                 </div>
-                <div>
-                  <label for="work_email" class="hidden">Work Email</label>
+                <div class="form-field">
                   <input
                     type="email"
                     id="work_email"
                     name="work_email"
-                    placeholder="Work Email*"
+                    placeholder="&nbsp;"
                     required
                   />
+                  <label for="work_email" class="required">Work Email</label>
                   <p id="work_email_p" class="hidden invalid_p">
-                    invalid work_email!!
+                    Email should be with '@'.
                   </p>
                 </div>
-                <div>
-                  <label for="job_title" class="hidden">Job Title</label>
+                <div class="form-field">
                   <input
                     id="job_title"
                     name="job_title"
-                    placeholder="Job Title*"
+                    placeholder="&nbsp;"
                     required
                   />
+                  <label for="job_title" class="required">Job Title</label>
                   <p id="job_title_p" class="hidden invalid_p">
-                    invalid job_title!!
+                    Job Title is empty.
                   </p>
                 </div>
-                <div>
-                  <label for="country" class="hidden">Country</label>
-                  <select id="country" name="country" required>
-                    <option value="" selected disabled hidden>Country*</option>
+                <div class="form-field">
+                  <select id="country" name="country">
+                    <option value="" selected disabled hidden>Country</option>
                     <optgroup label="Europe">
                       <option value="Denmark">Denmark</option>
                       <option value="Finland">Finland</option>
@@ -101,20 +100,27 @@
                       <option value="Nepal">Nepal</option>
                     </optgroup>
                   </select>
+                  <label for="country" class="optional">Country</label>
                   <p id="country_p" class="hidden invalid_p">
                     invalid country!!
                   </p>
                 </div>
-                <div>
-                  <label for="company" class="hidden">Company</label>
-                  <input id="company" name="company" placeholder="Company" />
+                <div class="form-field">
+                  <input id="company" name="company" placeholder="&nbsp;" />
+                  <label for="company" class="optional">Company</label>
                 </div>
-                <div>
+                <div class="agree-field">
                   <input type="checkbox" id="agree" name="agree" required />
-                  <label for="agree">Yes, I agree.</label>
-                  <p id="agree_p" class="hidden invalid_p">invalid agree!!</p>
+                  <label for="agree" class="required"
+                    >Yes, I agree with <a href="#terms">Terms</a>.</label
+                  >
+                  <p id="agree_p" class="hidden invalid_p">
+                    We need client's agreement with Terms.
+                  </p>
                 </div>
-                <button type="submit" id="submitBtn">Submit</button>
+                <button type="submit" id="submitBtn">
+                  <img src="static/img/submit.svg" alt="submit" />Submit
+                </button>
               </form>
             </div>
           </div>

@@ -5,10 +5,26 @@ const API_KEY = "5e9e0988436377171a0c266d";
 window.addEventListener("load", () => {
   const form = document.querySelector(".form form");
   const elements = form.elements;
-  elements.full_name.focus();
+  // elements.full_name.focus();
   form.setAttribute("novalidate", true);
+  form
+    .querySelectorAll("[required]")
+    .forEach((ele) =>
+      ele.addEventListener("input", checkValidationBeforeSubmit)
+    );
   form.addEventListener("submit", submitInfo);
 });
+
+function checkValidationBeforeSubmit(e) {
+  e.target.value = e.target.value.trim();
+  e.target.classList.remove("invalid");
+  if (!e.target.checkValidity()) {
+    e.target.classList.add("invalid");
+    e.target.parentNode.querySelector("p").classList.remove("hidden");
+  } else {
+    e.target.parentNode.querySelector("p").classList.add("hidden");
+  }
+}
 
 function submitInfo(e) {
   e.preventDefault();

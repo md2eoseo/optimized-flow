@@ -15,35 +15,89 @@
     font-family: BoldFont;
   }
 
-  img {
+  & > img {
     grid-column: 1;
     grid-row: 2;
     max-width: 110%;
+    margin: auto;
   }
 
   form {
     grid-column: 2;
     grid-row: 2;
-    margin-left: 15%;
+    margin: auto;
+  }
+
+  .form-field {
+    display: grid;
+    width: 300px;
+  }
+
+  .form-field > * {
+    grid-area: 1 / 1;
   }
 
   input,
   select {
     &:not([type="checkbox"]) {
-      width: 70%;
+      width: 100%;
       height: 40px;
+      border: 1.8px solid #cecece;
     }
 
-    margin: 10px 0 10px 0;
+    &:not([type="checkbox"]):focus {
+      border: 1.8px solid black;
+    }
+
+    &.invalid {
+      border: 1px solid red;
+    }
+
+    &:not([type="checkbox"]):not([name="country"]):not([name="company"]):valid {
+      border: 1px solid green;
+    }
+
+    &:not(:placeholder-shown) + label {
+      transform: translate(5px, -170%) scale(0.9);
+      opacity: 1;
+    }
+
+    margin: 15px 0;
+    outline: none;
+    padding: 7px 10px;
+    background: #f5fafb;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  label:not([type="checkbox"]) {
+    place-self: center start;
+    transform-origin: 0 100%;
+    transform: translate(15px, 0);
+    opacity: 0.8;
+    transition: 0.3s ease;
+  }
+
+  label.required::after {
+    content: " *";
+    color: red;
+    font-size: 15px;
+  }
+
+  label.optional::after {
+    content: " (optional)";
+    opacity: 0.8;
+    font-size: 12px;
   }
 
   #submitBtn {
+    width: 100%;
     margin-top: 1vw;
     border: 0;
     outline: none;
     border-radius: 0;
     padding: 15px 30px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -55,5 +109,26 @@
     &:focus {
       background: darken(#1ab188, 5%);
     }
+    img {
+      width: 35px;
+      position: relative;
+      top: 5px;
+      left: -5px;
+      filter: invert(100%);
+    }
   }
+}
+
+.invalid_p {
+  color: red;
+  font-size: 14px;
+  place-self: center start;
+  transform-origin: 0 100%;
+  transform: translate(150px, -32px);
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+.agree-field .invalid_p {
+  transform: translate(3px, 0);
 }
