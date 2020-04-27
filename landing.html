@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/png" href="static/image/favicon-32x32.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="static/image/favicon-32x32.png"
+    />
     <link rel="stylesheet" href="styles.scss" />
     <meta name="robots" content="noindex" />
     <script src="https://kea-alt-del.dk/dxc/login.js"></script>
@@ -41,6 +45,11 @@
           </div>
           <div class="container">
             <div class="element">
+              <img
+                id="form-img"
+                src="./static/img/microsoft-dynamics-support.jpg"
+                alt="keyboard-img"
+              />
               <form>
                 <h1>Sign Up!</h1>
                 <label for="full_name">Full Name</label>
@@ -85,10 +94,12 @@
                   name="company"
                   placeholder="Company"
                 />
-                <input type="checkbox" id="agree" name="agree" />
-                <label for="agree">Yes, I agree.</label>
-                <button id="backBtn" class="btn">Back</button>
-                <button id="NextBtn" class="btn">Next</button>
+                <div class="agreed">
+                  <input type="checkbox" id="agree" name="agree" />
+                  <label id="agree-label" for="agree">Yes, I agree.</label>
+                </div>
+                <!-- <button id="backBtn" class="btn">Back</button>
+                <button id="NextBtn" class="btn">Next</button> -->
                 <button type="submit" id="submitBtn" class="btn">Submit</button>
               </form>
             </div>
@@ -96,5 +107,6 @@
         </article>
       </div>
     </section>
+    <script src="form.js"></script>
   </body>
 </html>

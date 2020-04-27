@@ -2,6 +2,7 @@
 
 @use 'partials/base' as *;
 @use 'partials/components';
+@use 'partials/base/form';
 
 .container {
   &::after {
