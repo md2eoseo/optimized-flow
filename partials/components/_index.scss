@@ -1,57 +1,58 @@
 @forward 'form';
 //section1-->bg tagline1&2
-.section1 {
-  img#bg {
-    margin: 0;
-    padding: 0;
-    border: 1px solid #000;
-    position: relative;
-    width: 80vw;
-  }
-  h1#tagline1 {
-    position: absolute;
-    top: 12vw;
-    left: 15vw;
-    font-size: 3vw;
-  }
-  h2#tagline2 {
-    position: absolute;
-    top: 22vw;
-    left: 15vw;
-    font-size: 2.7vw;
+.section-main {
+  .section_top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
   }
 
   h3 {
-    position: absolute;
-    left: 15vw;
-    top: 45vw;
-    font-size: 1.9vw;
+    font-size: 3vw;
   }
-  button#subs-btn {
-    position: absolute;
-    top: 45vw;
-    left: 69vw;
+
+  #subs-btn {
+    position: relative;
+    font-size: 2vw;
     text-transform: uppercase;
-    float: right;
-    padding: 0.5vw;
+    padding: 1vw;
     letter-spacing: 0.1em;
     background: #1ab188;
     color: #fff;
-    transition: 0.5s;
+    border: 0;
+  }
+
+  .section_bottom {
+    position: relative;
+    text-align: center;
+  }
+
+  #bg {
+    width: 100%;
+    opacity: 0.8;
+  }
+
+  h1#tagline1 {
+    position: absolute;
+    left: 12%;
+    top: 25vh;
+    font-size: 5vw;
+  }
+  h2#tagline2 {
+    position: absolute;
+    left: 12%;
+    top: 60vh;
+    font-size: 2.7vw;
   }
 }
 //section2-->img-1,h1 & p
 
 //section3-->img-2,h1 & p
 //section4-->img-3,h1 & p
+.section1,
 .section2,
-.section3,
-.section4 {
-  margin-top: 3vw;
-  margin-bottom: 3vw;
+.section3 {
   display: grid;
-  justify-items: center;
-  align-items: center;
   grid-template-areas: "image text";
   img {
     grid-area: image;
@@ -61,13 +62,16 @@
     grid-area: text;
     padding-left: 2vw;
   }
-
+  h1 {
+    font-size: 3.5vw;
+  }
   p {
     padding-top: 1vw;
+    font-size: 2vw;
   }
 }
 //alternate
-.section3 {
+.section2 {
   grid-template-areas: "text image";
   img {
     padding-left: 2vw;
@@ -84,17 +88,8 @@
   }
 }
 
-hr {
-  margin-top: -1.5vw;
-
-  width: 80vw;
-  height: 1px;
-  background: black;
-  left: 10%;
-  position: absolute;
-}
 @media screen and (max-device-width: 500px) and (orientation: portrait) {
-  .section1 {
+  .section-main {
     h1#tagline1 {
       position: absolute;
       top: 24vw;
@@ -128,9 +123,9 @@ hr {
       transition: 0.5s;
     }
   }
+  .section1,
   .section2,
-  .section3,
-  .section4 {
+  .section3 {
     margin-top: 3vw;
     margin-bottom: 3vw;
     display: grid;

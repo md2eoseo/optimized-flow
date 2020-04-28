@@ -4,8 +4,6 @@ const API_KEY = "5e9e0988436377171a0c266d";
 
 window.addEventListener("load", () => {
   const form = document.querySelector(".form form");
-  const elements = form.elements;
-  // elements.full_name.focus();
   form.setAttribute("novalidate", true);
   form
     .querySelectorAll("[required]")
@@ -44,7 +42,6 @@ function checkValidation(form) {
   const full_name_p = form.querySelector("#full_name_p");
   const work_email_p = form.querySelector("#work_email_p");
   const job_title_p = form.querySelector("#job_title_p");
-  const country_p = form.querySelector("#country_p");
   const agree_p = form.querySelector("#agree_p");
   full_name.value = full_name.value.trim();
   work_email.value = work_email.value.trim();
@@ -124,7 +121,13 @@ function post(data) {
 
 function isClientSubmitted() {
   const client = JSON.parse(localStorage.getItem("isClientSubmitted"));
-  console.log(client.work_email);
+
+  if (client != null) {
+    document.querySelector(
+      "#tagline3"
+    ).textContent = `Welcome back, ${client.full_name}!`;
+    document.querySelector("#subs-btn").textContent = "To the Asset";
+  }
 }
 
 function toTheForm() {
