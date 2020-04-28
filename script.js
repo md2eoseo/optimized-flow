@@ -67,38 +67,36 @@ function checkValidation(form) {
     return true;
   } else {
     // check every inputs' validity
-    if (!full_name.checkValidity()) {
-      full_name.classList.add("invalid");
-      full_name_p.classList.remove("hidden");
+    if (!job_title.checkValidity()) {
+      job_title.classList.add("invalid");
+      job_title_p.classList.remove("hidden");
+      job_title.focus();
     } else {
-      full_name_p.classList.add("hidden");
+      job_title_p.classList.add("hidden");
     }
     if (!work_email.checkValidity()) {
       work_email.classList.add("invalid");
       work_email_p.classList.remove("hidden");
+      work_email.focus();
     } else {
       work_email_p.classList.add("hidden");
     }
-    if (!job_title.checkValidity()) {
-      job_title.classList.add("invalid");
-      job_title_p.classList.remove("hidden");
+    if (!full_name.checkValidity()) {
+      full_name.classList.add("invalid");
+      full_name_p.classList.remove("hidden");
+      full_name.focus();
     } else {
-      job_title_p.classList.add("hidden");
-    }
-    if (!country.checkValidity()) {
-      country.classList.add("invalid");
-      country_p.classList.remove("hidden");
-    } else {
-      country_p.classList.add("hidden");
+      full_name_p.classList.add("hidden");
     }
     if (!agree.checkValidity()) {
       agree.classList.add("invalid");
       agree_p.classList.remove("hidden");
+      agree.focus();
     } else {
       agree_p.classList.add("hidden");
     }
 
-    console.log("validation error!!");
+    console.error("Validation False!");
   }
 }
 
