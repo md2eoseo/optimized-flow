@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
       ele.addEventListener("input", checkValidationBeforeSubmit)
     );
   form.addEventListener("submit", submitInfo);
+  document.querySelector("#subs-btn").addEventListener("click", toTheForm);
   isClientSubmitted();
 });
 
@@ -124,4 +125,9 @@ function post(data) {
 function isClientSubmitted() {
   const client = JSON.parse(localStorage.getItem("isClientSubmitted"));
   console.log(client.work_email);
+}
+
+function toTheForm() {
+  window.location = "#form";
+  document.querySelector(".form form").elements.full_name.focus();
 }
