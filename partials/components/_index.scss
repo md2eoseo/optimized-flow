@@ -1,1 +1,148 @@
 @forward 'form';
+//section1-->bg tagline1&2
+.section1 {
+  img#bg {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000;
+    position: relative;
+    width: 80vw;
+  }
+  h1#tagline1 {
+    position: absolute;
+    top: 12vw;
+    left: 15vw;
+    font-size: 3vw;
+  }
+  h2#tagline2 {
+    position: absolute;
+    top: 22vw;
+    left: 15vw;
+    font-size: 2.7vw;
+  }
+
+  h3 {
+    position: absolute;
+    left: 15vw;
+    top: 45vw;
+    font-size: 1.9vw;
+  }
+  button#subs-btn {
+    position: absolute;
+    top: 45vw;
+    left: 69vw;
+    text-transform: uppercase;
+    float: right;
+    padding: 0.5vw;
+    letter-spacing: 0.1em;
+    background: #1ab188;
+    color: #fff;
+    transition: 0.5s;
+  }
+}
+//section2-->img-1,h1 & p
+
+//section3-->img-2,h1 & p
+//section4-->img-3,h1 & p
+.section2,
+.section3,
+.section4 {
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: "image text";
+  img {
+    grid-area: image;
+    width: 40vw;
+  }
+  .textContainer {
+    grid-area: text;
+    padding-left: 2vw;
+  }
+
+  p {
+    padding-top: 1vw;
+  }
+}
+//alternate
+.section3 {
+  grid-template-areas: "text image";
+  img {
+    padding-left: 2vw;
+    grid-area: image;
+    width: 40vw;
+  }
+  .textContainer {
+    grid-area: text;
+    padding-left: 0;
+  }
+
+  p {
+    padding-top: 1vw;
+  }
+}
+
+hr {
+  margin-top: -1.5vw;
+
+  width: 80vw;
+  height: 1px;
+  background: black;
+  left: 10%;
+  position: absolute;
+}
+@media screen and (max-device-width: 500px) and (orientation: portrait) {
+  .section1 {
+    h1#tagline1 {
+      position: absolute;
+      top: 24vw;
+      left: 15vw;
+      font-size: 4vw;
+    }
+    h2#tagline2 {
+      position: absolute;
+      top: 37vw;
+      left: 15vw;
+      font-size: 3.4vw;
+    }
+
+    h3 {
+      position: absolute;
+      left: 15vw;
+      top: 55vw;
+      font-size: 2.2vw;
+    }
+    button#subs-btn {
+      font-size: 2.2vw;
+      position: absolute;
+      top: 55vw;
+      left: 69vw;
+      text-transform: uppercase;
+      float: right;
+      padding: 0.3vw;
+      letter-spacing: 0.1em;
+      background: #1ab188;
+      color: #fff;
+      transition: 0.5s;
+    }
+  }
+  .section2,
+  .section3,
+  .section4 {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+      "image"
+      "text";
+    img {
+      padding-left: 2vw;
+
+      width: 80vw;
+    }
+  }
+}
