@@ -6,7 +6,8 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15px;
+  grid-column-gap: 5vw;
+  grid-row-gap: 4vw;
   // grid-auto-rows: minmax(60px, auto);
   grid-template-areas:
     "header header"
@@ -21,51 +22,134 @@
     "companies prerequisite"
     "getup learnmore"
     "footer footer";
-  justify-items: center;
+  margin: 0 30px;
 }
 
 .header {
   grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > * {
+    margin: 0 3vw;
+  }
+
+  img {
+    width: 15vw;
+    height: auto;
+  }
 }
+
 .title {
   grid-area: title;
+  text-align: center;
+  h1 {
+    font-family: BoldFont;
+    font-size: 3em;
+  }
+  h2 {
+    margin: 1vw 0;
+    font-size: 2em;
+  }
+  img {
+    margin: 2vw;
+  }
 }
 .title-p {
   grid-area: title-p;
+  font-size: 2em;
+  font-weight: 550;
 }
 .advantages {
   grid-area: advantages;
+  @include asset-list;
 }
 .optimize {
   grid-area: optimize;
+  @include asset-topic-title;
 }
 .flexible {
   grid-area: flexible;
+  @include asset-topic-title;
 }
 .deliver {
   grid-area: deliver;
+  @include asset-topic-title;
+
+  ul {
+    float: right;
+  }
 }
 .data-model {
   grid-area: data-model;
+  text-align: center;
+  @include asset-topic-title;
+
+  h2 {
+    margin: 5vw 0;
+  }
 }
 .data-model-p {
   grid-area: data-model-p;
+  @include asset-topic-title;
 }
 .features {
   grid-area: features;
+  @include asset-list;
 }
 .companies {
   grid-area: companies;
+  @include asset-topic-title;
 }
 .prerequisite {
   grid-area: prerequisite;
+  @include asset-topic-title;
+
+  ul {
+    padding: 1vw;
+  }
+
+  ul li {
+    margin: 10px 0;
+    font-size: 1.5em;
+  }
 }
 .getup {
   grid-area: getup;
+  @include asset-topic-title;
 }
 .learnmore {
   grid-area: learnmore;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  p {
+    font-family: BoldFont;
+    font-size: 3vw;
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  img {
+    width: 3vw;
+  }
+
+  @include simple-link;
 }
 .footer {
   grid-area: footer;
+  margin-top: 10vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #ddd;
+  div {
+    max-width: 60%;
+  }
+  @include simple-link;
+  span {
+    text-decoration: underline;
+  }
 }
