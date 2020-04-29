@@ -1,0 +1,119 @@
+@use 'css/reset';
+@use 'partials/components';
+
+@media only screen and (max-width: 768px) {
+  [class*="box-"] {
+    width: 100%;
+  }
+}
+h1 {
+  font-family: GT Walsheim Pro;
+  font-size: clamp (10px, 50em, 80px);
+}
+h2 {
+  font-family: GT Walsheim Pro;
+  font-size: clamp (5px, 40em, 60px);
+}
+p {
+  font-family: GT Walsheim Pro;
+  font-size: 24px;
+}
+ul li {
+  font-family: GT Walsheim Pro;
+  font-size: 24px;
+}
+
+.box1 {
+  background-color: yellow;
+  padding: 2em;
+  width: 100%;
+}
+section.heading {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-direction: column;
+}
+
+.topic1 {
+  text-align: center;
+}
+.box2 {
+  background-color: yellow;
+  padding: 2em;
+  width: 100%;
+  height: 100%;
+}
+.box3 {
+  background-color: green;
+  padding: 2em;
+  width: 100%;
+}
+.box4 {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  flex-direction: row-reverse;
+  padding: 2em;
+  column-count: 2em;
+}
+.type1 {
+  width: 100%;
+}
+.type2 {
+  width: 100%;
+  row-gap: 4em;
+}
+#strategicPlan {
+  background-color: hotpink;
+  padding: 2em;
+}
+#fed {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-direction: row;
+  padding: 2em;
+  width: 100%;
+}
+
+#features {
+  width: 100%;
+}
+#prerequesites {
+  width: 100%;
+}
+
+#strategicPlan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  flex-direction: row;
+  padding: 2em;
+}
+
+.contact {
+  width: 100%;
+}
+#dxcInfo li {
+  list-style: none;
+}
+.about {
+  width: 100%;
+}
+
+img.headerPic {
+  width: 80%;
+  height: auto;
+  padding-left: 20em;
+}
+#dataPic {
+  width: 80%;
+}
