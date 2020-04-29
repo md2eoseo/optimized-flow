@@ -11,7 +11,6 @@ window.addEventListener("load", () => {
       ele.addEventListener("input", checkValidationBeforeSubmit)
     );
   form.addEventListener("submit", submitInfo);
-  document.querySelector("#subs-btn").addEventListener("click", toTheForm);
   isClientSubmitted();
 });
 
@@ -114,6 +113,7 @@ function post(data) {
       console.log(`inserted ${postData} into client list!`);
       localStorage.setItem("isClientSubmitted", [JSON.stringify(data)]);
     })
+    .then(() => (window.location = "asset.html"))
     .catch((error) => {
       console.error(`POST ERROR: ${error}`);
     });
@@ -127,10 +127,13 @@ function isClientSubmitted() {
       "#tagline3"
     ).textContent = `Welcome back, ${client.full_name}!`;
     document.querySelector("#subs-btn").textContent = "To the Asset";
+    document
+      .querySelector("#subs-btn")
+      .addEventListener("click", () => (window.location = "asset.html"));
+  } else {
+    document
+      .querySelector("#subs-btn")
+      .addEventListener("click", () => (window.location = "#form"));
+    document.querySelector(".form form").elements.full_name.focus();
   }
-}
-
-function toTheForm() {
-  window.location = "#form";
-  document.querySelector(".form form").elements.full_name.focus();
 }

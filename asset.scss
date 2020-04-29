@@ -1,4 +1,6 @@
 @use 'css/reset';
+
+@use 'partials/base' as *;
 @use 'partials/components';
 
 @media only screen and (max-width: 768px) {
@@ -7,19 +9,15 @@
   }
 }
 h1 {
-  font-family: GT Walsheim Pro;
   font-size: clamp (10px, 50em, 80px);
 }
 h2 {
-  font-family: GT Walsheim Pro;
   font-size: clamp (5px, 40em, 60px);
 }
 p {
-  font-family: GT Walsheim Pro;
   font-size: 24px;
 }
 ul li {
-  font-family: GT Walsheim Pro;
   font-size: 24px;
 }
 
