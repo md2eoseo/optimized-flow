@@ -71,24 +71,25 @@ html {
 }
 .optimize {
   grid-area: optimize;
-  @include asset-topic-title;
+  @include asset-topic;
 }
 .flexible {
   grid-area: flexible;
-  @include asset-topic-title;
+  @include asset-topic;
 }
 .deliver {
   grid-area: deliver;
-  @include asset-topic-title;
+  @include asset-topic;
 
   ul {
-    float: right;
+    margin-left: 10%;
+    font-size: 1.5em;
   }
 }
 .data-model {
   grid-area: data-model;
   text-align: center;
-  @include asset-topic-title;
+  @include asset-topic;
 
   h2 {
     margin: 5vw 0;
@@ -96,7 +97,7 @@ html {
 }
 .data-model-p {
   grid-area: data-model-p;
-  @include asset-topic-title;
+  @include asset-topic;
 }
 .features {
   grid-area: features;
@@ -104,11 +105,11 @@ html {
 }
 .companies {
   grid-area: companies;
-  @include asset-topic-title;
+  @include asset-topic;
 }
 .prerequisite {
   grid-area: prerequisite;
-  @include asset-topic-title;
+  @include asset-topic;
 
   ul {
     padding: 1vw;
@@ -121,7 +122,7 @@ html {
 }
 .getup {
   grid-area: getup;
-  @include asset-topic-title;
+  @include asset-topic;
 }
 .learnmore {
   grid-area: learnmore;
@@ -156,6 +157,24 @@ html {
   @include simple-link;
   span {
     text-decoration: underline;
+  }
+}
+
+.sub-info {
+  color: red;
+}
+
+.sub-info-box {
+  position: absolute;
+  padding: 5px;
+  font-style: italic;
+  width: 80%;
+  background-color: #fff;
+  border: 3px solid black;
+  border-radius: 15px;
+  z-index: 1;
+  &::before {
+    content: " ※ ";
   }
 }
 

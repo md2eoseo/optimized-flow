@@ -6,4 +6,13 @@ window.addEventListener("load", () => {
       document.querySelector("#topBtn").classList.remove("hidden");
     else document.querySelector("#topBtn").classList.add("hidden");
   });
+
+  document.querySelectorAll(".sub-info").forEach((ele) => {
+    ele.addEventListener("mouseover", () => {
+      document.querySelector(`.${ele.dataset.info}`).classList.remove("hidden");
+    });
+    ele.addEventListener("mouseout", () => {
+      document.querySelector(`.${ele.dataset.info}`).classList.add("hidden");
+    });
+  });
 });
