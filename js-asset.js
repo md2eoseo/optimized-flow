@@ -1,5 +1,10 @@
 "use strict";
 
+const client = JSON.parse(localStorage.getItem("isClientSubmitted"));
+if (client == null) {
+  window.location = "/landing.html";
+}
+
 window.addEventListener("load", () => {
   window.addEventListener("scroll", (e) => {
     if ((e.currentTarget.scrollTop || window.pageYOffset) != 0)
