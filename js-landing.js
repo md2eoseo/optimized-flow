@@ -53,7 +53,7 @@ function checkValidation(form) {
   });
 
   if (form.checkValidity()) {
-    post({
+    checkData({
       full_name: full_name.value,
       work_email: work_email.value,
       job_title: job_title.value,
@@ -95,6 +95,49 @@ function checkValidation(form) {
 
     console.error("Validation False!");
   }
+}
+
+function checkData(data) {
+  fetch(`${DB_URL}?q={"work_email": "${data.work_email}"}`, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": API_KEY,
+      "cache-control": "no-cache",
+    },
+  })
+    .then((res) => res.json())
+    .then((exist) => {
+      if (!exist.length) {
+        data.cnt = 1;
+        post(data);
+      } else {
+        data.$inc = { cnt: 1 };
+        put(data, exist[0]._id);
+      }
+    });
+}
+
+function put(data, id) {
+  const putData = JSON.stringify(data);
+  fetch(`${DB_URL}/${id}`, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": API_KEY,
+      "cache-control": "no-cache",
+    },
+    body: putData,
+  })
+    .then((res) => res.json())
+    .then(() => {
+      console.log(`already ${data.work_email} existsd!`);
+      localStorage.setItem("isClientSubmitted", [JSON.stringify(data)]);
+    })
+    .then(() => (window.location = "asset.html"))
+    .catch((error) => {
+      console.error(`PUT ERROR: ${error}`);
+    });
 }
 
 function post(data) {
