@@ -3,115 +3,69 @@
 @use 'partials/base' as *;
 @use 'partials/components';
 
-@media only screen and (max-width: 768px) {
-  [class*="box-"] {
-    width: 100%;
-  }
-}
-h1 {
-  font-size: clamp (10px, 50em, 80px);
-}
-h2 {
-  font-size: clamp (5px, 40em, 60px);
-}
-p {
-  font-size: 24px;
-}
-ul li {
-  font-size: 24px;
-}
-
-.box1 {
-  background-color: yellow;
-  padding: 2em;
-  width: 100%;
-}
-section.heading {
-  display: flex;
-  justify-content: center;
-  align-content: space-between;
-  flex-direction: column;
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  // grid-auto-rows: minmax(60px, auto);
+  grid-template-areas:
+    "header header"
+    "title title"
+    "title-p title-p"
+    "advantages advantages"
+    "optimize flexible"
+    "optimize deliver"
+    "data-model data-model"
+    "data-model-p data-model-p"
+    "features features"
+    "companies prerequisite"
+    "getup learnmore"
+    "footer footer";
+  justify-items: center;
 }
 
-.topic1 {
-  text-align: center;
+.header {
+  grid-area: header;
 }
-.box2 {
-  background-color: yellow;
-  padding: 2em;
-  width: 100%;
-  height: 100%;
+.title {
+  grid-area: title;
 }
-.box3 {
-  background-color: green;
-  padding: 2em;
-  width: 100%;
+.title-p {
+  grid-area: title-p;
 }
-.box4 {
-  display: flex;
-  justify-content: center;
-  align-content: flex-end;
-  flex-direction: row-reverse;
-  padding: 2em;
-  column-count: 2em;
+.advantages {
+  grid-area: advantages;
 }
-.type1 {
-  width: 100%;
+.optimize {
+  grid-area: optimize;
 }
-.type2 {
-  width: 100%;
-  row-gap: 4em;
+.flexible {
+  grid-area: flexible;
 }
-#strategicPlan {
-  background-color: hotpink;
-  padding: 2em;
+.deliver {
+  grid-area: deliver;
 }
-#fed {
-  display: flex;
-  justify-content: center;
-  align-content: space-between;
-  flex-direction: row;
-  padding: 2em;
-  width: 100%;
+.data-model {
+  grid-area: data-model;
 }
-
-#features {
-  width: 100%;
+.data-model-p {
+  grid-area: data-model-p;
 }
-#prerequesites {
-  width: 100%;
+.features {
+  grid-area: features;
 }
-
-#strategicPlan {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap-reverse;
+.companies {
+  grid-area: companies;
 }
-footer {
-  display: flex;
-  justify-content: center;
-  align-content: flex-end;
-  flex-direction: row;
-  padding: 2em;
+.prerequisite {
+  grid-area: prerequisite;
 }
-
-.contact {
-  width: 100%;
+.getup {
+  grid-area: getup;
 }
-#dxcInfo li {
-  list-style: none;
+.learnmore {
+  grid-area: learnmore;
 }
-.about {
-  width: 100%;
-}
-
-img.headerPic {
-  width: 80%;
-  height: auto;
-  padding-left: 20em;
-}
-#dataPic {
-  width: 80%;
+.footer {
+  grid-area: footer;
 }
