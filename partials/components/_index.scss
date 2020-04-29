@@ -20,6 +20,11 @@
     background: #1ab188;
     color: #fff;
     border: 0;
+    &:hover,
+    &:focus {
+      background: darken(#1ab188, 5%);
+      cursor: pointer;
+    }
   }
 
   .section_bottom {
@@ -50,9 +55,7 @@
 
 //section3-->img-2,h1 & p
 //section4-->img-3,h1 & p
-.section1,
-.section2,
-.section3 {
+.section {
   display: grid;
   grid-template-areas: "image text";
   img {
@@ -64,11 +67,11 @@
     padding-left: 2vw;
   }
   h1 {
-    font-size: 3.5vw;
+    font-size: 3vw;
   }
   p {
     padding-top: 1vw;
-    font-size: 2vw;
+    font-size: 1.8vw;
   }
 }
 //alternate

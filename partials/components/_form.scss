@@ -108,6 +108,7 @@
     &:hover,
     &:focus {
       background: darken(#1ab188, 5%);
+      cursor: pointer;
     }
     img {
       width: 35px;

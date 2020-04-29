@@ -131,9 +131,9 @@ function isClientSubmitted() {
       .querySelector("#subs-btn")
       .addEventListener("click", () => (window.location = "asset.html"));
   } else {
-    document
-      .querySelector("#subs-btn")
-      .addEventListener("click", () => (window.location = "#form"));
-    document.querySelector(".form form").elements.full_name.focus();
+    document.querySelector("#subs-btn").addEventListener("click", () => {
+      window.location = "#form";
+      document.querySelector(".form form").elements.full_name.focus();
+    });
   }
 }
