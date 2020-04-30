@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
 });
 
 function checkValidationBeforeSubmit(e) {
-  e.target.value = e.target.value.trim();
+  e.target.value = e.target.value;
   e.target.classList.remove("invalid");
   if (!e.target.checkValidity()) {
     e.target.classList.add("invalid");
