@@ -1,6 +1,6 @@
 "use strict";
-const DB_URL = "https://todoweb-a2c8.restdb.io/rest/client";
-const API_KEY = "5e9e0988436377171a0c266d";
+import dotenv from "dotenv";
+dotenv.config();
 
 window.addEventListener("load", () => {
   const form = document.querySelector(".form form");
@@ -98,11 +98,11 @@ function checkValidation(form) {
 }
 
 function checkData(data) {
-  fetch(`${DB_URL}?q={"work_email": "${data.work_email}"}`, {
+  fetch(`${process.env.DB_URL}?q={"work_email": "${data.work_email}"}`, {
     method: "get",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": API_KEY,
+      "x-apikey": process.env.API_KEY,
       "cache-control": "no-cache",
     },
   })
@@ -120,11 +120,11 @@ function checkData(data) {
 
 function put(data, id) {
   const putData = JSON.stringify(data);
-  fetch(`${DB_URL}/${id}`, {
+  fetch(`${process.env.DB_URL}/${id}`, {
     method: "put",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": API_KEY,
+      "x-apikey": process.env.API_KEY,
       "cache-control": "no-cache",
     },
     body: putData,
@@ -142,11 +142,11 @@ function put(data, id) {
 
 function post(data) {
   const postData = JSON.stringify(data);
-  fetch(DB_URL, {
+  fetch(process.env.DB_URL, {
     method: "post",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": API_KEY,
+      "x-apikey": process.env.API_KEY,
       "cache-control": "no-cache",
     },
     body: postData,
